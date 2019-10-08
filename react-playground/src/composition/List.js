@@ -1,13 +1,12 @@
 import React from 'react'
 import Card from './Card'
 
-class List extends React.Component{
+class List extends React.Component {
     render() {
-
-        let Cards = this.props.cards.map((card, i) => { 
-            return <Card key={i} message={card.message} />
+        let Cards = this.props.cards.map(card => { 
+            return (<Card key={card.id} title={card.title} message={card.content} />)
         })
-        return (
+         return (
             <section className="List">
                 <header className="List-header">
                     <h2>{this.props.header}</h2>
@@ -16,7 +15,7 @@ class List extends React.Component{
                     {Cards}
                 </div>
             </section>
-        )}
+         )}
 }
 
 export default List;

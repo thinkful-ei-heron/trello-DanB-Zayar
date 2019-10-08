@@ -4,24 +4,25 @@ import List from './composition/List'
 
 function App(props) {
   let lists = props.store.lists;
-  console.log(lists);
+  // console.log(lists);
   let allCards = props.store.allCards;
 
   let Lists = lists.map((list) => {
     let cards = [];
     list.cardIds.forEach(id => {
       cards.push(allCards[id])
+      // console.log(allCards[id]);
     })
     return (<List key={list.id} header={list.header} cards={cards} />)
   })
 
 
   return (
-    <main class="App">
-      <header class="App-header">
+    <main className="App">
+      <header className="App-header">
         <h1>Trelloyes!</h1>
       </header>
-      <div class="App-list">
+      <div className="App-list">
         {Lists}
       </div>
     </main>

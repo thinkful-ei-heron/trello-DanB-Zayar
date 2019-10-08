@@ -10,7 +10,7 @@ class Card extends React.Component {
                         {this.props.title}
                     </h3>
                     <p>
-                        {this.props.content}
+                        {this.props.message}
                     </p>
                 </div>)
     }
